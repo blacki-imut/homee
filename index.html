@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- SEO -->
+  <title>Script Generator Official - Tools & Generator Premium</title>
+
+  <meta name="description" content="Script Generator Official adalah website tools generator premium dengan tampilan dark modern, fitur otomatis, dan berbagai tools keren terbaru." />
+
+  <meta name="keywords" content="script generator, tools premium, generator website, auto tools, dark premium website, script tools" />
+
+  <meta name="author" content="Hello Gusi" />
+
+  <meta name="robots" content="index, follow"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Script Generator Official"/>
+  <meta property="og:description" content="Website tools generator premium dan modern."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://script-gemerator.netlify.app"/>
+  <meta property="og:image" content="https://script-gemerator.netlify.app/banner.png"/>
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#00ffcc"/>
+
+  <!-- Google Verification nanti isi -->
+  <!--
+  <meta name="google-site-verification" content="KODE_VERIFIKASI"/>
+  -->
+
+  <!-- Redirect -->
+  <meta http-equiv="refresh" content="8; url=https://script-gemerator.netlify.app">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      min-height:100vh;
+      overflow:hidden;
+      position:relative;
+    }
+
+    /* Background Glow */
+    .bg-glow{
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:#00ffcc20;
+      filter:blur(120px);
+      border-radius:50%;
+      top:-200px;
+      right:-200px;
+      z-index:0;
+    }
+
+    .container{
+      position:relative;
+      z-index:2;
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      border-radius:25px;
+      padding:40px;
+      width:100%;
+      max-width:700px;
+      text-align:center;
+      box-shadow:0 0 40px rgba(0,255,200,0.08);
+      animation:fade 1.5s ease;
+    }
+
+    .logo{
+      width:110px;
+      height:110px;
+      margin:auto;
+      margin-bottom:20px;
+      border-radius:25px;
+      background:linear-gradient(135deg,#00ffcc,#0077ff);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:40px;
+      font-weight:bold;
+      color:#000;
+      box-shadow:0 0 35px #00ffcc66;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:15px;
+      background:linear-gradient(to right,#00ffcc,#00a2ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .desc{
+      color:#bdbdbd;
+      line-height:1.8;
+      margin-bottom:30px;
+      font-size:15px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+      gap:15px;
+      margin-bottom:35px;
+    }
+
+    .box{
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .box h2{
+      color:#00ffcc;
+      margin-bottom:6px;
+    }
+
+    .box p{
+      color:#999;
+      font-size:13px;
+    }
+
+    .loader{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      border:7px solid rgba(255,255,255,0.08);
+      border-top:7px solid #00ffcc;
+      margin:25px auto;
+      animation:spin 1s linear infinite;
+    }
+
+    .countdown{
+      margin-top:10px;
+      color:#aaa;
+      font-size:14px;
+    }
+
+    .btns{
+      display:flex;
+      gap:15px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      text-decoration:none;
+      padding:14px 24px;
+      border-radius:14px;
+      font-weight:600;
+      transition:0.3s;
+      border:none;
+      color:white;
+    }
+
+    .main-btn{
+      background:linear-gradient(135deg,#00ffcc,#0077ff);
+      color:#000;
+    }
+
+    .discord{
+      background:#5865F2;
+    }
+
+    .youtube{
+      background:#ff0000;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px) scale(1.03);
+      box-shadow:0 0 25px rgba(0,255,200,0.25);
+    }
+
+    .features{
+      margin-top:35px;
+      text-align:left;
+    }
+
+    .features h3{
+      margin-bottom:15px;
+      color:#00ffcc;
+    }
+
+    .features ul{
+      list-style:none;
+    }
+
+    .features ul li{
+      margin-bottom:10px;
+      color:#bdbdbd;
+    }
+
+    .footer{
+      margin-top:35px;
+      color:#666;
+      font-size:13px;
+    }
+
+    @keyframes spin{
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:600px){
+      h1{
+        font-size:32px;
+      }
+
+      .card{
+        padding:25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<div class="container">
+  <div class="card">
+
+    <div class="logo">
+      SG
+    </div>
+
+    <h1>Script Generator</h1>
+
+    <p class="desc">
+      Website tools generator premium dengan tampilan modern dark style,
+      fitur otomatis, performa cepat, dan berbagai tools keren terbaru.
+      Dibuat untuk membantu pengguna mendapatkan pengalaman terbaik.
+    </p>
+
+    <div class="stats">
+
+      <div class="box">
+        <h2>24/7</h2>
+        <p>Online Server</p>
+      </div>
+
+      <div class="box">
+        <h2>Fast</h2>
+        <p>Loading Cepat</p>
+      </div>
+
+      <div class="box">
+        <h2>Premium</h2>
+        <p>Dark UI Modern</p>
+      </div>
+
+      <div class="box">
+        <h2>Secure</h2>
+        <p>Website Aman</p>
+      </div>
+
+    </div>
+
+    <div class="loader"></div>
+
+    <div class="countdown">
+      Mengalihkan ke website utama dalam <span id="timer">8</span> detik...
+    </div>
+
+    <div class="btns">
+
+      <a href="https://script-gemerator.netlify.app" class="btn main-btn">
+        Buka Website
+      </a>
+
+      <a href="https://discord.gg/MHWdfAQe" class="btn discord">
+        Discord
+      </a>
+
+      <a href="#" class="btn youtube">
+        YouTube
+      </a>
+
+    </div>
+
+    <div class="features">
+
+      <h3>Fitur Website</h3>
+
+      <ul>
+        <li>✔ Tampilan Dark Premium Modern</li>
+        <li>✔ SEO Friendly Untuk Google</li>
+        <li>✔ Auto Redirect Otomatis</li>
+        <li>✔ Responsive Android & PC</li>
+        <li>✔ Optimasi Loading Cepat</li>
+        <li>✔ Animasi Smooth Premium</li>
+      </ul>
+
+    </div>
+
+    <div class="footer">
+      © 2026 Script Generator Official
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let time = 8;
+
+  const timer = document.getElementById("timer");
+
+  const countdown = setInterval(() => {
+    time--;
+    timer.innerHTML = time;
+
+    if(time <= 0){
+      clearInterval(countdown);
+
+      window.location.href =
+      "https://script-gemerator.netlify.app";
+    }
+
+  },1000);
+</script>
+
+</body>
+  </html>
