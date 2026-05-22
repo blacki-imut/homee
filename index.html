@@ -1,42 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RENDOM Official Website</title>
 
   <!-- SEO -->
-  <title>Script Generator Official - Tools & Generator Premium</title>
-
-  <meta name="description" content="Script Generator Official adalah website tools generator premium dengan tampilan dark modern, fitur otomatis, dan berbagai tools keren terbaru." />
-
-  <meta name="keywords" content="script generator, tools premium, generator website, auto tools, dark premium website, script tools" />
-
-  <meta name="author" content="Hello Gusi" />
-
-  <meta name="robots" content="index, follow"/>
+  <meta name="description" content="RENDOM adalah website premium dark modern dengan berbagai halaman keren, tools menarik, dan sistem auto redirect pintar.">
+  <meta name="keywords" content="rendom, tools premium, dark ui, modern website, auto redirect">
+  <meta name="author" content="Hello Gusi">
+  <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Script Generator Official"/>
-  <meta property="og:description" content="Website tools generator premium dan modern."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://script-gemerator.netlify.app"/>
-  <meta property="og:image" content="https://script-gemerator.netlify.app/banner.png"/>
+  <meta property="og:title" content="RENDOM Official Website">
+  <meta property="og:description" content="Website dark premium modern dengan fitur auto redirect dan tampilan mobile keren.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475">
 
-  <!-- Theme -->
-  <meta name="theme-color" content="#00ffcc"/>
-
-  <!-- Google Verification nanti isi -->
-  <!--
-  <meta name="google-site-verification" content="KODE_VERIFIKASI"/>
-  -->
-
-  <!-- Redirect -->
-  <meta http-equiv="refresh" content="8; url=https://script-gemerator.netlify.app">
+  <meta name="theme-color" content="#00ffcc">
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -47,313 +36,506 @@
     body{
       background:#050505;
       color:white;
-      min-height:100vh;
-      overflow:hidden;
-      position:relative;
+      overflow-x:hidden;
     }
 
-    /* Background Glow */
-    .bg-glow{
-      position:absolute;
-      width:600px;
-      height:600px;
-      background:#00ffcc20;
-      filter:blur(120px);
-      border-radius:50%;
-      top:-200px;
-      right:-200px;
-      z-index:0;
+    a{
+      text-decoration:none;
     }
 
-    .container{
-      position:relative;
-      z-index:2;
+    .hero{
       width:100%;
-      min-height:100vh;
+      aspect-ratio:16/9;
+      min-height:320px;
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,#040404,#0b1220,#081c15);
       display:flex;
-      justify-content:center;
       align-items:center;
+      justify-content:center;
       padding:20px;
     }
 
-    .card{
+    .glow1,
+    .glow2{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(100px);
+    }
+
+    .glow1{
+      width:300px;
+      height:300px;
+      background:#00ffcc30;
+      top:-100px;
+      left:-100px;
+    }
+
+    .glow2{
+      width:250px;
+      height:250px;
+      background:#0066ff30;
+      bottom:-80px;
+      right:-80px;
+    }
+
+    .hero-card{
+      width:100%;
+      max-width:900px;
       background:rgba(255,255,255,0.05);
       border:1px solid rgba(255,255,255,0.08);
       backdrop-filter:blur(12px);
-      border-radius:25px;
-      padding:40px;
-      width:100%;
-      max-width:700px;
-      text-align:center;
+      border-radius:28px;
+      padding:28px;
+      position:relative;
+      z-index:2;
       box-shadow:0 0 40px rgba(0,255,200,0.08);
-      animation:fade 1.5s ease;
+    }
+
+    .top-flex{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .logo-box{
+      display:flex;
+      align-items:center;
+      gap:16px;
     }
 
     .logo{
-      width:110px;
-      height:110px;
-      margin:auto;
-      margin-bottom:20px;
-      border-radius:25px;
-      background:linear-gradient(135deg,#00ffcc,#0077ff);
+      width:75px;
+      height:75px;
+      border-radius:22px;
+      background:linear-gradient(135deg,#00ffcc,#0066ff);
       display:flex;
-      justify-content:center;
       align-items:center;
-      font-size:40px;
-      font-weight:bold;
-      color:#000;
-      box-shadow:0 0 35px #00ffcc66;
+      justify-content:center;
+      font-size:28px;
+      font-weight:700;
+      color:black;
+      box-shadow:0 0 25px rgba(0,255,200,0.35);
     }
 
-    h1{
-      font-size:42px;
-      margin-bottom:15px;
+    .logo-text h1{
+      font-size:34px;
       background:linear-gradient(to right,#00ffcc,#00a2ff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
 
+    .logo-text p{
+      color:#aaa;
+      font-size:14px;
+      margin-top:4px;
+    }
+
+    .auto-toggle{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:12px 16px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .switch{
+      position:relative;
+      width:60px;
+      height:30px;
+      background:#222;
+      border-radius:30px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .switch::before{
+      content:'';
+      position:absolute;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      background:white;
+      top:3px;
+      left:3px;
+      transition:0.3s;
+    }
+
+    .switch.active{
+      background:#00ffcc;
+    }
+
+    .switch.active::before{
+      left:33px;
+      background:black;
+    }
+
     .desc{
-      color:#bdbdbd;
+      margin-top:25px;
       line-height:1.8;
-      margin-bottom:30px;
+      color:#cfcfcf;
       font-size:15px;
     }
 
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-      gap:15px;
-      margin-bottom:35px;
-    }
-
-    .box{
-      background:rgba(255,255,255,0.04);
-      border-radius:18px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,0.05);
-    }
-
-    .box h2{
-      color:#00ffcc;
-      margin-bottom:6px;
-    }
-
-    .box p{
-      color:#999;
-      font-size:13px;
-    }
-
-    .loader{
-      width:80px;
-      height:80px;
-      border-radius:50%;
-      border:7px solid rgba(255,255,255,0.08);
-      border-top:7px solid #00ffcc;
-      margin:25px auto;
-      animation:spin 1s linear infinite;
-    }
-
     .countdown{
-      margin-top:10px;
-      color:#aaa;
-      font-size:14px;
+      margin-top:18px;
+      color:#00ffcc;
+      font-weight:600;
     }
 
     .btns{
+      margin-top:25px;
       display:flex;
-      gap:15px;
-      justify-content:center;
       flex-wrap:wrap;
-      margin-top:30px;
+      gap:14px;
     }
 
     .btn{
-      text-decoration:none;
-      padding:14px 24px;
-      border-radius:14px;
+      padding:14px 22px;
+      border-radius:16px;
+      color:white;
       font-weight:600;
       transition:0.3s;
-      border:none;
-      color:white;
+      border:1px solid rgba(255,255,255,0.08);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 25px rgba(0,255,200,0.2);
     }
 
     .main-btn{
       background:linear-gradient(135deg,#00ffcc,#0077ff);
-      color:#000;
+      color:black;
     }
 
-    .discord{
-      background:#5865F2;
+    .tiktok{
+      background:#111;
     }
 
     .youtube{
       background:#ff0000;
     }
 
-    .btn:hover{
-      transform:translateY(-4px) scale(1.03);
-      box-shadow:0 0 25px rgba(0,255,200,0.25);
+    .saweria{
+      background:#ff9900;
+      color:black;
     }
 
-    .features{
-      margin-top:35px;
-      text-align:left;
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:28px 18px 80px;
     }
 
-    .features h3{
-      margin-bottom:15px;
-      color:#00ffcc;
+    .section-title{
+      font-size:28px;
+      margin-bottom:22px;
+      background:linear-gradient(to right,#00ffcc,#00a2ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
-    .features ul{
-      list-style:none;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
     }
 
-    .features ul li{
-      margin-bottom:10px;
-      color:#bdbdbd;
+    .card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:22px;
+      padding:22px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 0 30px rgba(0,255,200,0.08);
+    }
+
+    .card h3{
+      margin-top:12px;
+      margin-bottom:12px;
+      font-size:22px;
+    }
+
+    .card p{
+      color:#b8b8b8;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .icon{
+      width:60px;
+      height:60px;
+      border-radius:18px;
+      background:linear-gradient(135deg,#00ffcc,#0077ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      color:black;
+      font-weight:bold;
     }
 
     .footer{
-      margin-top:35px;
+      text-align:center;
+      margin-top:60px;
       color:#666;
-      font-size:13px;
+      font-size:14px;
     }
 
-    @keyframes spin{
-      100%{
-        transform:rotate(360deg);
-      }
-    }
+    @media(max-width:768px){
 
-    @keyframes fade{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    @media(max-width:600px){
-      h1{
-        font-size:32px;
+      .hero{
+        min-height:450px;
+        aspect-ratio:auto;
       }
 
-      .card{
-        padding:25px;
+      .hero-card{
+        padding:20px;
       }
+
+      .top-flex{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .logo-text h1{
+        font-size:28px;
+      }
+
+      .btns{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+        justify-content:center;
+      }
+
     }
+
   </style>
 </head>
 <body>
 
-<div class="bg-glow"></div>
+  <!-- HERO -->
+  <section class="hero">
 
-<div class="container">
-  <div class="card">
+    <div class="glow1"></div>
+    <div class="glow2"></div>
 
-    <div class="logo">
-      SG
-    </div>
+    <div class="hero-card">
 
-    <h1>Script Generator</h1>
+      <div class="top-flex">
 
-    <p class="desc">
-      Website tools generator premium dengan tampilan modern dark style,
-      fitur otomatis, performa cepat, dan berbagai tools keren terbaru.
-      Dibuat untuk membantu pengguna mendapatkan pengalaman terbaik.
-    </p>
+        <div class="logo-box">
+          <div class="logo">
+            R
+          </div>
 
-    <div class="stats">
+          <div class="logo-text">
+            <h1>RENDOM</h1>
+            <p>Dark Premium Website Modern UI</p>
+          </div>
+        </div>
 
-      <div class="box">
-        <h2>24/7</h2>
-        <p>Online Server</p>
+        <div class="auto-toggle">
+          <div>
+            <strong>Auto Open Website</strong>
+            <p id="statusText" style="font-size:12px;color:#aaa;">
+              Aktif
+            </p>
+          </div>
+
+          <div class="switch active" id="toggle"></div>
+        </div>
+
       </div>
 
-      <div class="box">
-        <h2>Fast</h2>
-        <p>Loading Cepat</p>
+      <p class="desc">
+        Selamat datang di website RENDOM premium edition.
+        Website ini memiliki tampilan dark modern, animasi premium,
+        fitur auto redirect otomatis, dan berbagai halaman menarik agar
+        tampilan website lebih hidup dan tidak kosong.
+      </p>
+
+      <div class="countdown">
+        Redirect otomatis dalam <span id="timer">8</span> detik...
       </div>
 
-      <div class="box">
-        <h2>Premium</h2>
-        <p>Dark UI Modern</p>
-      </div>
+      <div class="btns">
 
-      <div class="box">
-        <h2>Secure</h2>
-        <p>Website Aman</p>
+        <a href="https://script-gemerator.netlify.app" class="btn main-btn">
+          🚀 Buka Website
+        </a>
+
+        <a href="https://tiktok.com/@blackiimut2" class="btn tiktok">
+          🎵 TikTok
+        </a>
+
+        <a href="https://youtube.com/@blacki-2?sub_confirmation=1" class="btn youtube">
+          ▶ YouTube
+        </a>
+
+        <a href="https://saweria.co/Blacki2" class="btn saweria">
+          💰 Saweria
+        </a>
+
       </div>
 
     </div>
 
-    <div class="loader"></div>
+  </section>
 
-    <div class="countdown">
-      Mengalihkan ke website utama dalam <span id="timer">8</span> detik...
-    </div>
+  <!-- CONTENT -->
+  <div class="container">
 
-    <div class="btns">
+    <h2 class="section-title">
+      Halaman & Fitur Premium
+    </h2>
 
-      <a href="https://script-gemerator.netlify.app" class="btn main-btn">
-        Buka Website
-      </a>
+    <div class="grid">
 
-      <a href="https://discord.gg/MHWdfAQe" class="btn discord">
-        Discord
-      </a>
+      <div class="card">
+        <div class="icon">1</div>
+        <h3>Dashboard</h3>
+        <p>
+          Tampilan dashboard modern dengan desain premium dark UI.
+        </p>
+      </div>
 
-      <a href="#" class="btn youtube">
-        YouTube
-      </a>
+      <div class="card">
+        <div class="icon">2</div>
+        <h3>Auto Generator</h3>
+        <p>
+          Sistem generator otomatis dengan loading cepat dan ringan.
+        </p>
+      </div>
 
-    </div>
+      <div class="card">
+        <div class="icon">3</div>
+        <h3>Premium Access</h3>
+        <p>
+          Akses fitur premium dengan tampilan modern dan animasi smooth.
+        </p>
+      </div>
 
-    <div class="features">
+      <div class="card">
+        <div class="icon">4</div>
+        <h3>Dark Mode</h3>
+        <p>
+          Tema dark premium nyaman digunakan di Android maupun desktop.
+        </p>
+      </div>
 
-      <h3>Fitur Website</h3>
+      <div class="card">
+        <div class="icon">5</div>
+        <h3>Fast Loading</h3>
+        <p>
+          Optimasi loading agar website terasa cepat dan ringan.
+        </p>
+      </div>
 
-      <ul>
-        <li>✔ Tampilan Dark Premium Modern</li>
-        <li>✔ SEO Friendly Untuk Google</li>
-        <li>✔ Auto Redirect Otomatis</li>
-        <li>✔ Responsive Android & PC</li>
-        <li>✔ Optimasi Loading Cepat</li>
-        <li>✔ Animasi Smooth Premium</li>
-      </ul>
+      <div class="card">
+        <div class="icon">6</div>
+        <h3>SEO Friendly</h3>
+        <p>
+          Optimasi SEO supaya website lebih mudah muncul di Google.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">7</div>
+        <h3>Mobile Responsive</h3>
+        <p>
+          UI mobile sudah disesuaikan agar terlihat premium di HP.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">8</div>
+        <h3>Secure System</h3>
+        <p>
+          Sistem website stabil dan aman untuk pengunjung.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">9</div>
+        <h3>Community</h3>
+        <p>
+          Terhubung langsung ke TikTok, YouTube, dan Saweria.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">10</div>
+        <h3>Future Update</h3>
+        <p>
+          Website siap dikembangkan dengan fitur tambahan lainnya.
+        </p>
+      </div>
 
     </div>
 
     <div class="footer">
-      © 2026 Script Generator Official
+      © 2026 RENDOM Official Website • Premium Dark UI
     </div>
 
   </div>
-</div>
 
-<script>
-  let time = 8;
+  <script>
 
-  const timer = document.getElementById("timer");
+    const toggle = document.getElementById('toggle');
+    const statusText = document.getElementById('statusText');
+    const timer = document.getElementById('timer');
 
-  const countdown = setInterval(() => {
-    time--;
-    timer.innerHTML = time;
+    let autoOpen = true;
+    let time = 8;
 
-    if(time <= 0){
-      clearInterval(countdown);
+    toggle.onclick = () => {
 
-      window.location.href =
-      "https://script-gemerator.netlify.app";
+      autoOpen = !autoOpen;
+
+      if(autoOpen){
+        toggle.classList.add('active');
+        statusText.innerHTML = 'Aktif';
+      }else{
+        toggle.classList.remove('active');
+        statusText.innerHTML = 'Nonaktif';
+      }
+
     }
 
-  },1000);
-</script>
+    const countdown = setInterval(() => {
+
+      time--;
+      timer.innerHTML = time;
+
+      if(time <= 0){
+
+        clearInterval(countdown);
+
+        if(autoOpen){
+          window.location.href = 'https://script-gemerator.netlify.app';
+        }
+
+      }
+
+    },1000);
+
+  </script>
 
 </body>
-  </html>
+</html>
